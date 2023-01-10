@@ -5,7 +5,9 @@ import './styles.css';
 const App = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
+        
       </Routes>
     </BrowserRouter>
   );
