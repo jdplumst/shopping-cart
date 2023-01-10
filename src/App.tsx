@@ -1,10 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
 import './styles.css';
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
