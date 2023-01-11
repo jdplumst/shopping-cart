@@ -3,16 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
-import Store from "./pages/Store";
+import Store, { CartItem } from "./pages/Store";
 import './styles.css';
 import { v4 as uuidv4 } from "uuid";
 
-type CartItem = {
-  id: string;
-  name: string;
-  price: number;
-  src: string;
-}
+
 
 const App = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
