@@ -8,6 +8,10 @@ import './styles.css';
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
+  useEffect(() => {
+    document.title = "Controllify";
+  })
+
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const addToCart = (name: string, price: number, src: string) => {
@@ -28,10 +32,6 @@ const App = () => {
       [...prevCart.slice(0, index), ...prevCart.slice(index+1)]
     )
   };
-
-  // useEffect(() => {
-  //   console.log(cart);
-  // })
 
   return (
     <BrowserRouter>
