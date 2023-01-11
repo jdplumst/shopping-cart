@@ -10,6 +10,7 @@ export type CartItem = {
 type CheckoutProps = {
     cart: CartItem[]
     removeFromCart: (e: React.MouseEvent<HTMLButtonElement>) => void
+    purchaseItems: () => void
 }
 
 const Checkout = (props: CheckoutProps) => {
@@ -30,8 +31,11 @@ const Checkout = (props: CheckoutProps) => {
                     )
                 })}
             </div>
-            <div className="text-2xl text-center font-bold pb-20">
+            <div className="text-2xl text-center font-bold">
                 <span>Total Price: ${props.cart.reduce((acc, product) => acc + product.price, 0)}</span>
+            </div>
+            <div className="flex justify-center py-10 ">
+                <button onClick={props.purchaseItems} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Purchase</button>
             </div>
         </div>
     )

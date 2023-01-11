@@ -33,13 +33,17 @@ const App = () => {
     )
   };
 
+  const purchaseItems = () => {
+    setCart([]);
+  };
+
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/store' element={<Store addToCart={addToCart} />} />
-        <Route path='/checkout' element={<Checkout cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path='/checkout' element={<Checkout cart={cart} removeFromCart={removeFromCart} purchaseItems={purchaseItems} />} />
       </Routes>
     </BrowserRouter>
   );
