@@ -13,6 +13,16 @@ const Product = (props: ProductProps) => {
         setQuantity(Number(e.target.value));
     }
 
+    const incrementQuantity = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+        console.log(quantity);
+    }
+
+    const decrementQuantity = () => {
+        setQuantity(prevQuantity => prevQuantity - 1);
+        console.log(quantity);
+    }
+
     return (
         <div>
             <img src={props.src} className="h-80 w-80" />
@@ -21,9 +31,9 @@ const Product = (props: ProductProps) => {
                 <p>Price: ${props.price}</p>
                 <span className='mr-2'>Quantity: </span>
                 <div className='inline-block border-solid border-2 border-indigo-600 w-fit bg-white px-2 divide-x'>
-                    <button className='pr-2'>-</button>
+                    <button onClick={decrementQuantity} className='pr-2'>-</button>
                     <input onChange={changeQuantity} type="number" defaultValue={1} className='w-10 text-center'></input>
-                    <button className='pl-2'>+</button>
+                    <button onClick={incrementQuantity} className='pl-2'>+</button>
                 </div>
                 <div className='flex justify-center'>
                     <button className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
