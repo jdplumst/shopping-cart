@@ -30,6 +30,9 @@ const Checkout = (props: CheckoutProps) => {
                     )
                 })}
             </div>
+            <div className="text-2xl text-center font-bold pb-20">
+                <span>Total Price: ${props.cart.reduce((acc, product) => acc + product.price, 0)}</span>
+            </div>
         </div>
     )
 }
