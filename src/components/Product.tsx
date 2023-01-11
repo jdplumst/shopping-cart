@@ -16,12 +16,10 @@ const Product = (props: ProductProps) => {
 
     const incrementQuantity = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
-        console.log(quantity);
     }
 
     const decrementQuantity = () => {
         setQuantity(prevQuantity => prevQuantity - 1);
-        console.log(quantity);
     }
 
     // Adds all items to cart, each with unique id
@@ -40,7 +38,7 @@ const Product = (props: ProductProps) => {
                 <span className='mr-2'>Quantity: </span>
                 <div className='inline-block border-solid border-2 border-indigo-600 w-fit bg-white px-2 divide-x'>
                     <button onClick={decrementQuantity} className='pr-2'>-</button>
-                    <input onChange={changeQuantity} type="number" defaultValue={1} className='w-10 text-center'></input>
+                    <input onChange={changeQuantity} type="number" value={quantity} className='w-10 text-center'></input>
                     <button onClick={incrementQuantity} className='pl-2'>+</button>
                 </div>
                 <div className='flex justify-center'>
