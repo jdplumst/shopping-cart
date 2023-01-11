@@ -7,7 +7,7 @@ import n64 from '../images/n64.jpg';
 import ps1 from '../images/ps1.jpg';
 
 type StoreProps = {
-    addToCart: () => void
+    addToCart: (name: string, price: number, src: string) => void
 }
 
 const Store = (props: StoreProps) => {
@@ -18,27 +18,33 @@ const Store = (props: StoreProps) => {
                 <Product 
                     name="PlayStation 5 Controller"
                     price={50}
-                    src={ps5}/>
+                    src={ps5}
+                    addToCart={props.addToCart} />
                 <Product 
                     name="Xbox Series X Controller"
                     price={45}
-                    src={xbox}/>
+                    src={xbox}
+                    addToCart={props.addToCart} />
                 <Product 
                     name="Nintendo Switch Joy-Cons"
                     price={30}
-                    src={joycons}/>
+                    src={joycons}
+                    addToCart={props.addToCart} />
                 <Product 
                     name="NES Controller"
                     price={80}
-                    src={nes}/>
+                    src={nes}
+                    addToCart={props.addToCart} />
                 <Product 
                     name="PlayStation 1 Controller"
                     price={90}
-                    src={ps1}/>
+                    src={ps1}
+                    addToCart={props.addToCart} />
                 <Product 
                     name="Nintendo 64 Controller"
                     price={100}
-                    src={n64}/>
+                    src={n64}
+                    addToCart={props.addToCart} />
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Checkout from "./pages/Checkout";
@@ -17,14 +17,20 @@ type CartItem = {
 const App = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = () => {
-    setCart([...cart, {
+  const addToCart = (name: string, price: number, src: string) => {
+    setCart(prevCart => 
+      [...prevCart, {
       id: uuidv4(),
-      name: 'hi',
-      price: 54,
-      src: 'bye',
-    }])
+      name: name,
+      price: price,
+      src: src,
+      }]
+    )
   };
+
+  // useEffect(() => {
+  //   console.log(cart);
+  // })
 
   return (
     <BrowserRouter>

@@ -4,6 +4,7 @@ type ProductProps = {
     name: string
     price: number
     src: string
+    addToCart: (name: string, price: number, src: string) => void
 }
 
 const Product = (props: ProductProps) => {
@@ -23,6 +24,13 @@ const Product = (props: ProductProps) => {
         console.log(quantity);
     }
 
+    // Adds all items to cart, each with unique id
+    const addAllToCart = () => {
+        for (let i = 0; i < quantity; i++) {
+            props.addToCart(props.name, props.price, props.src);
+        }
+    }
+
     return (
         <div>
             <img src={props.src} className="h-80 w-80" />
@@ -36,7 +44,7 @@ const Product = (props: ProductProps) => {
                     <button onClick={incrementQuantity} className='pl-2'>+</button>
                 </div>
                 <div className='flex justify-center'>
-                    <button className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
+                    <button onClick={addAllToCart} className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
                 </div>
             </div>
         </div>
