@@ -7,8 +7,8 @@ type ProductProps = {
 const Product = (props: ProductProps) => {
     return (
         <div>
-            <img src={props.src} className="h-48 w-48" />
-            <div className='bg-white h-36 w-48 mt-2 pt-2 pl-1'>
+            <img src={props.src} className="h-80 w-80" />
+            <div className='bg-white h-36 w-80 pt-2 pl-1 mb-20'>
                 <p>{props.name}</p>
                 <p>Price: ${props.price}</p>
                 <span className='mr-2'>Quantity: </span>
