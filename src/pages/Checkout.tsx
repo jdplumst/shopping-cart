@@ -9,6 +9,7 @@ export type CartItem = {
 
 type CheckoutProps = {
     cart: CartItem[]
+    removeFromCart: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Checkout = (props: CheckoutProps) => {
@@ -20,9 +21,11 @@ const Checkout = (props: CheckoutProps) => {
                     return (
                             <Product 
                                 key = {product.id}
+                                id = {product.id}
                                 name = {product.name}
                                 price = {product.price}
                                 src = {product.src}
+                                removeFromCart = {props.removeFromCart}
                                 mutation = "remove" />
                     )
                 })}

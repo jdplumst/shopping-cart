@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 type ProductProps = {
+    id?: string
     name: string
     price: number
     src: string
     addToCart?: (name: string, price: number, src: string) => void
+    removeFromCart?: (e: React.MouseEvent<HTMLButtonElement>) => void
     mutation: "add" | "remove"
 }
 
@@ -35,7 +37,7 @@ const Product = (props: ProductProps) => {
     if (props.mutation === 'add') {
         btn = <button onClick={addAllToCart} className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
     } else if (props.mutation === 'remove') {
-        btn = <button className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Remove From Cart</button>
+        btn = <button id={props.id} onClick={props.removeFromCart} className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Remove From Cart</button>
     }
 
     return (
