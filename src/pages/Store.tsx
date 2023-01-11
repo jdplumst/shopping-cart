@@ -19,32 +19,38 @@ const Store = (props: StoreProps) => {
                     name="PlayStation 5 Controller"
                     price={50}
                     src={ps5}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
                 <Product 
                     name="Xbox Series X Controller"
                     price={45}
                     src={xbox}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
                 <Product 
                     name="Nintendo Switch Joy-Cons"
                     price={30}
                     src={joycons}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
                 <Product 
                     name="NES Controller"
                     price={80}
                     src={nes}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
                 <Product 
                     name="PlayStation 1 Controller"
                     price={90}
                     src={ps1}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
                 <Product 
                     name="Nintendo 64 Controller"
                     price={100}
                     src={n64}
-                    addToCart={props.addToCart} />
+                    addToCart={props.addToCart}
+                    mutation="add" />
             </div>
         </div>
     )

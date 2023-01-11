@@ -4,7 +4,8 @@ type ProductProps = {
     name: string
     price: number
     src: string
-    addToCart: (name: string, price: number, src: string) => void
+    addToCart?: (name: string, price: number, src: string) => void
+    mutation: "add" | "remove"
 }
 
 const Product = (props: ProductProps) => {
@@ -25,8 +26,16 @@ const Product = (props: ProductProps) => {
     // Adds all items to cart, each with unique id
     const addAllToCart = () => {
         for (let i = 0; i < quantity; i++) {
-            props.addToCart(props.name, props.price, props.src);
+            props.addToCart?.(props.name, props.price, props.src);
         }
+    }
+
+    // Set either Add To Cart or Remove From Cart button if on Store or Checkout page
+    let btn;
+    if (props.mutation === 'add') {
+        btn = <button onClick={addAllToCart} className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
+    } else if (props.mutation === 'remove') {
+        btn = <button className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Remove From Cart</button>
     }
 
     return (
@@ -42,7 +51,7 @@ const Product = (props: ProductProps) => {
                     <button onClick={incrementQuantity} className='pl-2'>+</button>
                 </div>
                 <div className='flex justify-center'>
-                    <button onClick={addAllToCart} className='mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add To Cart</button>
+                    {btn}
                 </div>
             </div>
         </div>
