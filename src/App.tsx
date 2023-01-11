@@ -41,7 +41,7 @@ const App = () => {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/shopping-cart' element={<Home />} />
         <Route path='/store' element={<Store addToCart={addToCart} />} />
         <Route path='/checkout' element={<Checkout cart={cart} removeFromCart={removeFromCart} purchaseItems={purchaseItems} />} />
       </Routes>
