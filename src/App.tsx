@@ -38,10 +38,10 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
       <Nav />
       <Routes>
-        <Route path='/shopping-cart' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/store' element={<Store addToCart={addToCart} />} />
         <Route path='/checkout' element={<Checkout cart={cart} removeFromCart={removeFromCart} purchaseItems={purchaseItems} />} />
       </Routes>
