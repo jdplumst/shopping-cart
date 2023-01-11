@@ -1,5 +1,5 @@
 import Product from '../components/Product';
-import ps4 from '../images/ps5.jpg';
+import ps4 from '../images/ps4.jpg';
 import xbox from '../images/xbox.jpg';
 import joycons from '../images/joycons.jpg';
 import nes from '../images/nes.jpg';
